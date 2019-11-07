@@ -7,9 +7,12 @@ I2Cで接続するのでキーボードの基板がI2C接続に対応してい�
 ## 導入手順
  
 ### BLE Micro Proに最新版のファームウェアを導入する
+ - BLE Micro ProのブートローダとQMKを[こちらのページ](https://github.com/sekigon-gonnoc/BLE-Micro-Pro/blob/master/AboutDefaultFirmware/doc/getting_start.md)の手順に沿って最新版にアップデートします
+ - QMK for BMP v0.3.0以上がLPMEに対応しています
+
 ### LPME用の設定を用意する
- - [BLE Micro Proのリポジトリ](https://github.com/sekigon-gonnoc/BLE-Micro-Pro/tree/master/AboutDefaultFirmware/keyboards)に使いたいキーボード用の設定ファイルがある場合はダウンロードする
- - リポジトリにない場合、変換スクリプトを使って生成する
+ - [BLE Micro Proのリポジトリ](https://github.com/sekigon-gonnoc/BLE-Micro-Pro/tree/master/AboutDefaultFirmware/keyboards)に使いたいキーボード用の設定ファイルがある場合はダウンロードします
+ - リポジトリにない場合、変換スクリプトを使って生成してください
    ```
     python config_converter.py ~/qmk_firmware/keyboard/helix/rev2
    ```
@@ -20,4 +23,7 @@ I2Cで接続するのでキーボードの基板がI2C接続に対応してい�
  用意したjsonファイルをBLE Micro Proに書き込みます
 
 ### キーボードに取り付ける
-Pro Microを取り付ける場所に同じ向きで取り付けてください。コンスルーを使う場合ははんだ付けしなくても導通します
+ - Pro Microを取り付ける場所に同じ向きで取り付けてください。コンスルーを使う場合ははんだ付けしなくても導通します
+ - 左右のキーボードをTRRSケーブルで繋ぎ、BLE Micro Proの電源入れてキー入力ができることを確認してください
+   - TRRSケーブルとの相性によって動作しない場合があります
+   - バッテリー駆動する場合電源はBLE Micro Pro側だけに搭載すれば動作します
