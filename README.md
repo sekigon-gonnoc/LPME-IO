@@ -8,6 +8,36 @@ I2Cで接続するのでキーボードの基板がI2C接続に対応してい�
 
 
 ## 導入手順
+### (V2の場合)キーボードの行に対応するピンのジャンパをハンダでブリッジする
+  - ハンダのフラックスを軽く蒸発させるとブリッジしやすくなります
+  - マトリクスがCOL2ROWの場合は列に対応するほうをブリッジしてください
+  - どのピンをジャンパすればいいかわからない場合は、BLE Micro ProのストレージにあるCONFIG.JSNを開いてcol_pinsの後半のピンと対応をとってください
+    |config|LPMEのシルク|
+    |--|--|
+    |1|0|
+    |2|1|
+    |7|2|
+    |8|3|
+    |9|4|
+    |10|5|
+    |11|6|
+    |12|7|
+    |13|8|
+    |14|9|
+    |15|A|
+    |16|B|
+    |17|C|
+    |18|D|
+    |19|E|
+    |20|F|
+  - 例：Helix(5row)の場合
+       ```
+        "col_pins":[20,19,18,17,16,15,14,20,19,18,17,16,15,14],
+       ```  
+       →9からFをブリッジ  
+  ![solder_jumper](https://user-images.githubusercontent.com/43873124/97097560-fa0ccf80-16b4-11eb-996f-f2cc81ac0c04.jpg)
+
+  
  
 ### BLE Micro Proに最新版のファームウェアを導入する
  - BLE Micro ProのブートローダとQMKを[こちらのページ](https://github.com/sekigon-gonnoc/BLE-Micro-Pro/blob/master/AboutDefaultFirmware/doc/getting_start.md)の手順に沿って最新版にアップデートします
