@@ -6,6 +6,15 @@ I2Cで接続するのでキーボードの基板がI2C接続に対応してい�
 ただし、**外付けのプルアップ抵抗は取り付けないでください**  
 （標準ではI2C対応していないキーボードでも改造して対応させることもできますが、自己責任でお願いします）
 
+## 販売リンク
+- [BOOTH](https://nogikes.booth.pm/items/1656264)
+
+## バージョンの説明
+- V1: 初期バージョン
+- V2: 待機時の消費電流を半分から4分の1くらいに改善(両手分合わせて200uA→50uAくらい)
+  - 導入時に対象のキーボードに合わせてハンダブリッジする必要がある
+- V2a: 性能はV2と同等でI2Cのアドレスのみ異なる
+  - [BLE Micro Pro用QMK v0.9.3](https://github.com/sekigon-gonnoc/qmk_firmware/releases/tag/bmp-0.9.3)以降で対応
 
 ## 導入手順
 ### (V2の場合)キーボードの列(Col)に対応するピンのジャンパをハンダでブリッジする
@@ -41,7 +50,7 @@ I2Cで接続するのでキーボードの基板がI2C接続に対応してい�
  
 ### BLE Micro Proに最新版のファームウェアを導入する
  - BLE Micro ProのブートローダとQMKを[こちらのページ](https://github.com/sekigon-gonnoc/BLE-Micro-Pro/blob/master/AboutDefaultFirmware/doc/getting_start.md)の手順に沿って最新版にアップデートします
- - QMK for BMP v0.3.0以上がLPMEに対応しています
+ - V1, V2はQMK for BMP v0.3.0以上、V2aはv0.9.3以上が対応しています
 
 ### LPME用の設定を用意する
  - [BLE Micro Proのリポジトリ](https://github.com/sekigon-gonnoc/BLE-Micro-Pro/tree/master/AboutDefaultFirmware/keyboards)に使いたいキーボード用の設定ファイルがある場合はダウンロードします
